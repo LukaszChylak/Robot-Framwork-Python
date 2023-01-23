@@ -1,0 +1,18 @@
+***Settings***
+Library   SeleniumLibrary
+
+Resource    ../Login.robot
+Resource    ../TransUseraPage.robot
+
+Test Setup    Login to XXX
+Suite Teardown    Close XXX
+Test Teardown    Read URL after test
+
+***Variable***
+${UserID}   JarekKKK01
+
+*** Test Case ***
+Search new user  with ALL fields
+  [Tags]  Search new user
+  WHEN Search using parameters    %*  * * * * * * Luk * * *Lukas01  * *2009 * PL  * * Yes Yes No  *
+  THEN Element is Showing (id/XPAT/name)  # moze byc bez THEN
